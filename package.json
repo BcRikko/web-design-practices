@@ -1,0 +1,25 @@
+{
+  "name": "web-design-practices",
+  "version": "1.0.0",
+  "author": "BcRikko",
+  "description": "Web design practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BcRikko/web-design-practices.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BcRikko/web-design-practices/issues"
+  },
+  "homepage": "https://github.com/BcRikko/web-design-practices#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-stylus": "^2.6.0",
+    "run-sequence": "^1.2.2"
+  }
+}
