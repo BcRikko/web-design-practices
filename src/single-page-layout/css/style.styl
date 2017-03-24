@@ -20,6 +20,7 @@ $inverse-color = #ffffff
     & .page-navigator
         float right
         font-size 2.4rem
+        margin-top 10px
 
         &::after
             clear both
@@ -32,9 +33,10 @@ $inverse-color = #ffffff
                 padding 10px 20px
                 text-align center
 
+                transition .5s
+
                 &:hover
-                    color $color
-                    background-color $inverse-color
+                    border-bottom 2px solid $inverse-color
 
     & .company-name
         padding-top 180px
@@ -176,3 +178,32 @@ $inverse-color = #ffffff
 #contact
     height 680px
 
+    .contact-form
+        width 750px
+        margin 70px auto 30px
+
+        > .field
+            transition .5s
+            display block
+
+            margin 0 auto 20px
+            border-radius 5px
+            border 3px solid $inverse-color
+
+            color $color
+            background-color $inverse-color
+            font-size 2.2rem
+
+        > .inputfield
+            width 100%
+            padding 15px 30px
+
+            &:focus
+                border 3px solid #58BE89
+
+        > .submit
+            width 180px
+            height 50px
+
+            &:hover
+                opacity .8
