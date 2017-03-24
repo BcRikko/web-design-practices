@@ -53,3 +53,22 @@ $inverse-color = #ffffff
             margin-top 50px
             font-size 2.4rem
             text-align center
+
+
+.content-section
+    &::before
+        content '\00226B'
+        display block
+        margin -42px auto 0
+
+        height 84px
+        width 84px
+        border-radius 100%
+        transform rotate(90deg)
+
+        font-size 4.8rem
+        line-height 78px
+        text-align center
+
+        background-color $inverse-color
+        z-index 1
