@@ -33,10 +33,36 @@ $inverse-color = #ffffff
                 padding 10px 20px
                 text-align center
 
-                transition .5s
+                position relative
 
-                &:hover
+                &::before
+                    content ''
+                    position absolute
+                    bottom 0
+                    left 50%
+
+                    display block
+                    width 0
+                    transition all .3s ease
+
+                &:hover::before
+                    width 50%
                     border-bottom 2px solid $inverse-color
+
+                &::after
+                    content ''
+                    position absolute
+                    bottom 0
+                    right 50%
+
+                    display block
+                    width 0
+                    transition all .3s ease
+
+                &:hover::after
+                    width 50%
+                    border-bottom 2px solid $inverse-color
+
 
     & .company-name
         padding-top 180px
