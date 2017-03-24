@@ -140,6 +140,13 @@ $inverse-color = #ffffff
         margin-top 70px
 
         > .circle
+            transition .5s
+            transform rotateY(0deg)
+            border-radius 50%
+
+            &:hover
+                transform rotateY(360deg)
+
             > a
                 text-decoration none
                 color $inverse-color
@@ -156,11 +163,7 @@ $inverse-color = #ffffff
                     color $inverse-color
                     background-color $color
 
-                    transition .3s
-                    transform rotateY(0deg)
-
-                    &:hover
-                        transform rotateY(180deg)
+                    transition .7s
 
                     &.-blogger
                         $blogger = #ff5722
