@@ -57,6 +57,7 @@ $inverse-color = #ffffff
 
 .content-section
     position relative
+    padding 80px 0
 
     &::before
         $circle-size = 84px
@@ -83,6 +84,15 @@ $inverse-color = #ffffff
     &.-inverse
         color $inverse-color
         background-color $color
+
+    & .title
+        width 280px
+        margin 0 auto
+
+        font-size 4.8rem
+        text-align center
+        padding-bottom 10px
+        border-bottom 2px solid
 
 #about
     height 960px
