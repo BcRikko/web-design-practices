@@ -56,13 +56,19 @@ $inverse-color = #ffffff
 
 
 .content-section
+    position relative
+
     &::before
+        $circle-size = 84px
+
         content '\00226B'
         display block
-        margin -42px auto 0
+        position absolute
+        top calc(84px / 2 * -1)
+        left calc(50% - 84px / 2)
 
-        height 84px
-        width 84px
+        height $circle-size
+        width $circle-size
         border-radius 100%
         transform rotate(90deg)
 
@@ -70,5 +76,25 @@ $inverse-color = #ffffff
         line-height 78px
         text-align center
 
+        color $color
         background-color $inverse-color
         z-index 1
+
+    &.-inverse
+        color $inverse-color
+        background-color $color
+
+#about
+    height 960px
+
+
+#works
+    height 780px
+
+
+#social
+    height 460px
+
+
+#contact
+    height 680px
