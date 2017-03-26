@@ -1,37 +1,26 @@
-window.onscroll = function () {
-    var pot = document.getElementsByClassName('flower-pot')[0];
-    var scrollTop = document.body.scrollTop;
+$(window).scroll(function () {
+    var scrollTop = $('body').scrollTop();
+    var $pot = $('.flower-pot');
 
-    if (scrollTop < 460) {
-        pot.className = 'flower-pot -begin-pos';
-    } else if (460 <= scrollTop && scrollTop <= 1055) {
-        pot.className = 'flower-pot';
-    } else {
-        pot.className = 'flower-pot -end-pos';
-    }
+    // fixed flower-pot element
+    $pot.toggleClass('-begin-pos', scrollTop < 460);
+    $pot.toggleClass('-end-pos', 1055 < scrollTop);
 
-    var list = document.getElementsByClassName('event-item');
-    Array.prototype.forEach.call(list, function (a, i) {
+    // show leaves
+    $('.event-item').each(function (i, a) {
         var base = 500;
-        var date = a.getElementsByClassName('date')[0];
-        var desc = a.getElementsByClassName('description')[0]
+        var $date = $(a).find('.date');
+        var $desc = $(a).find('.description');
 
-        if (i * 100 + 500 < scrollTop) {
-            date.classList.add('-show');
-            desc.classList.add('-show');
-        } else {
-            date.classList.remove('-show');
-            desc.classList.remove('-show');
-        }
+        $date.toggleClass('-show', i * 100 + 500 < scrollTop);
+        $desc.toggleClass('-show', i * 100 + 500 < scrollTop);
     });
 
-    if ($('#about').offset().top < scrollTop) {
-        $('.scroll-to-top').addClass('-show')
-    } else {
-        $('.scroll-to-top').removeClass('-show')
-    }
-};
+    // show scroll-top-top button
+    $('.scroll-to-top').toggleClass('-show', $('#about').offset().top < scrollTop);
+});
 
+// click to scroll
 $('.page-navigator > .menu').children().each(function (i, a) {
     $(a).click(function () {
         var idSelector = '#' + $(a).attr('class');
@@ -41,6 +30,7 @@ $('.page-navigator > .menu').children().each(function (i, a) {
     });
 });
 
+// scroll-to-top button
 $('.scroll-to-top').click(function () {
     $('body').animate({ scrollTop: 0}, 500);
 });
