@@ -24,6 +24,12 @@ window.onscroll = function () {
             desc.classList.remove('-show');
         }
     });
+
+    if ($('#about').offset().top < scrollTop) {
+        $('.scroll-to-top').addClass('-show')
+    } else {
+        $('.scroll-to-top').removeClass('-show')
+    }
 };
 
 $('.page-navigator > .menu').children().each(function (i, a) {
@@ -33,4 +39,8 @@ $('.page-navigator > .menu').children().each(function (i, a) {
             scrollTop: $(idSelector).offset().top
         }, 500);
     });
+});
+
+$('.scroll-to-top').click(function () {
+    $('body').animate({ scrollTop: 0}, 500);
 });

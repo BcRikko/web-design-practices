@@ -454,3 +454,28 @@ $inverse-color = #ffffff
         font-size 1.8rem
         text-align center
         letter-spacing 1px
+
+
+.scroll-to-top
+    position fixed
+    bottom 20px
+    right 20px
+    width 70px
+    height 70px
+    border-radius 50%
+
+    color $inverse-color
+    background-color $color
+    box-shadow 3px 3px 20px #000000
+
+    text-align center
+    line-height 70px
+    font-size 3.5rem
+
+    cursor pointer
+    opacity 0
+    transition .5s
+    z-index 10
+
+    &.-show
+        opacity 1
