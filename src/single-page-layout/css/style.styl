@@ -1,0 +1,478 @@
+@charset "UTF-8"
+
+@import "../../static/reset.css"
+@import "./_base"
+
+$color = #333333
+$inverse-color = #ffffff
+
+.container
+    width 960px
+    margin 0 auto
+
+.inverse
+    color $inverse-color
+    background-color $color
+    box-shadow 0px 0px 10px $color
+
+.main
+    height 680px
+    position: relative
+    background $color url('../asset/header.jpg') no-repeat
+    background-size cover
+    z-index 1
+
+    &::before
+        content ''
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+
+        background inherit
+        filter blur(5px)
+        z-index -1
+
+    & .page-navigator
+        float right
+        font-size 2.4rem
+        margin-top 10px
+
+        &::after
+            clear both
+
+        > .menu
+            list-style none
+
+            > li
+                display inline-block
+                padding 10px 20px
+                text-align center
+
+                position relative
+
+                &:hover
+                    cursor pointer
+
+                &::before
+                    content ''
+                    position absolute
+                    bottom 0
+                    left 50%
+
+                    display block
+                    width 0
+                    transition all .5s ease
+
+                &:hover::before
+                    width 50%
+                    border-bottom 2px solid $inverse-color
+
+                &::after
+                    content ''
+                    position absolute
+                    bottom 0
+                    right 50%
+
+                    display block
+                    width 0
+                    transition all .5s ease
+
+                &:hover::after
+                    width 50%
+                    border-bottom 2px solid $inverse-color
+
+
+    & .company-name
+        padding-top 220px
+        margin 0 auto
+
+        text-align center
+        text-shadow 2px 2px 10px $color
+
+        > .title
+            font-size 9.2rem
+            letter-spacing 8px
+
+            > .-accent
+                color #F20002
+
+        > .lead
+            margin-top 50px
+            font-size 2.4rem
+
+.content-section
+    position relative
+    padding 80px 0
+    color $color
+    background-color $inverse-color
+
+    &::before
+        $circle-size = 84px
+
+        content '\f103'
+        font-family FontAwesome
+        display block
+        position absolute
+        top calc(84px / 2 * -1)
+        left calc(50% - 84px / 2)
+
+        height $circle-size
+        width $circle-size
+        border-radius 100%
+
+        font-size 4.8rem
+        line-height 84px
+        text-align center
+
+        color $color
+        background-color $inverse-color
+        z-index 2
+
+    &.-inverse
+        color $inverse-color
+        background-color $color
+        box-shadow 0px 0px 10px $color
+        z-index 1
+
+    & .title
+        width 280px
+        margin 0 auto
+
+        font-size 4.8rem
+        letter-spacing 3px
+        text-align center
+        padding-bottom 10px
+        border-bottom 2px solid
+
+#about
+    height 1310px
+    position relative
+
+    .avatar-item
+        margin-top 60px
+
+        > .image
+            float left
+            margin-left calc(50% - 90px)
+            margin-bottom -3px
+
+            > img
+                width 180px
+                height 180px
+                border 8px solid #ffbf00
+                border-radius 50%
+
+        > .info
+            float left
+            margin-left 30px
+
+            > .position
+                margin-top 30px
+                font-size 1.8rem
+
+            > .name
+                margin-top calc(180px / 2 - 30px - 1.8rem - 1.9rem)
+                font-size 3.8rem
+
+        &::after
+            content ''
+            display block
+            clear both
+
+
+    .event-list
+        > .event-item
+            height 120px
+            padding-top 30px
+
+            &.-right
+                margin-left calc(50% - 4px)
+                border-left 8px solid #51b11d
+                padding-left  30px
+                text-align left
+                position relative
+
+                &::before
+                    content '\f06c'
+                    font-family FontAwesome
+                    position absolute
+                    top 20px
+                    left -75px
+
+                    color #51b11d
+                    font-size  7rem
+                    transform rotateY(180deg)
+
+            &.-left
+                margin-right calc(50% - 4px)
+                border-right 8px solid #51b11d
+                padding-right 30px
+                text-align right
+                position relative
+
+                &::before
+                    content '\f06c'
+                    font-family FontAwesome
+                    position absolute
+                    top 20px
+                    right -75px
+
+                    color #51b11d
+                    font-size  7rem
+
+            > .date
+                font-size 1.8rem
+                transition .5s
+                opacity 0
+
+                &.-show
+                    opacity 1
+
+
+            > .description
+                margin-top 10px
+                font-size 2.4rem
+                transition .5s
+                opacity 0
+
+                &.-show
+                    opacity 1
+
+
+    .flower-pot
+        position fixed
+        bottom 0
+        left calc(50% - 420px / 2)
+
+        &.-begin-pos
+            position absolute
+            top 500px
+
+        &.-end-pos
+            position absolute
+            bottom 0
+
+        > .top
+            width 420px
+            height 60px
+
+            background-color #662A1F
+
+        > .base
+            width 380px
+            height 150px
+            margin 0 auto
+            border-top 150px solid #7d4635
+            border-left 30px solid transparent
+            border-right 30px solid transparent
+            position relative
+
+
+#works
+    .works-list
+        margin-top 70px
+        display flex
+        justify-content space-between
+
+        > .card
+            display block
+            text-decoration none
+            width 200px
+
+            > .imagecontainer
+                position relative
+
+
+                &::before
+                    transition .3s
+                    content ''
+                    position absolute
+                    display block
+                    width 100%
+                    height 100%
+                    background-color $color
+                    opacity 0
+
+                &::after
+                    content 'MORE'
+                    display block
+                    position absolute
+                    top 75px
+                    left 50%
+
+                    width 120px
+                    margin-left -60px
+
+                    border 3px solid $inverse-color
+                    padding 15px
+                    font-size 2.4rem
+                    letter-spacing 3px
+                    text-align center
+
+                    color $inverse-color
+                    opacity 0
+
+                > .image
+                    width 200px
+                    height 200px
+
+                    border-radius 5px
+
+                    background-color $inverse-color
+                    background-repeat no-repeat
+                    object-fit cover
+
+            > .product
+                margin-top 10px
+
+                font-size 2.4rem
+                color $inverse-color
+                text-align center
+
+            &:hover
+                .imagecontainer::before
+                    opacity .9
+
+                .imagecontainer::after
+                    opacity 1
+
+
+#social
+    & .icons
+        list-style none
+        display flex
+        justify-content space-between
+        margin-top 70px
+
+        > .circle
+            transition .5s
+            transform rotateY(0deg)
+            border-radius 50%
+
+            &:hover
+                transform rotateY(360deg)
+
+            > a
+                text-decoration none
+                color $inverse-color
+
+                > .icon
+                    width 150px
+                    height 150px
+                    border-radius 50%
+                    text-align center
+                    vertical-align middle
+                    line-height 150px
+                    font-size 8.0rem
+
+                    color $inverse-color
+                    background-color $color
+
+                    transition .7s
+
+                    &.-blogger
+                        $blogger = #ff5722
+                        background-color $blogger
+
+                        &:hover
+                            color $blogger
+                            background-color $inverse-color
+                            border 5px solid $blogger
+
+                    &.-twitter
+                        $twitter = #5ea9dd
+                        background-color $twitter
+                        &::before
+                            // AdBlock対策
+                            content: "\f099";
+                        &:hover
+                            color $twitter
+                            background-color $inverse-color
+                            border 5px solid $twitter
+
+                    &.-soundcloud
+                        $soundcloud = #ff6c00
+                        background-color $soundcloud
+
+                        &:hover
+                            color $soundcloud
+                            background-color $inverse-color
+                            border 5px solid $soundcloud
+
+                    &.-github
+                        $github = #24292e
+                        background-color $github
+
+                        &:hover
+                            color $github
+                            background-color $inverse-color
+                            border 5px solid $github
+
+
+#contact
+    .contact-form
+        width 750px
+        margin 70px auto 0
+
+        > .field
+            transition .5s
+            display block
+            margin 0 auto 20px
+            border-radius 5px
+            border 3px solid $inverse-color
+
+            color $color
+            background-color $inverse-color
+            font-size 2.2rem
+
+        > .inputfield
+            width 100%
+            padding 15px 30px
+
+            &:focus
+                border 3px solid #58BE89
+
+        > .submit
+            width 180px
+            height 50px
+
+            &:hover
+                opacity .8
+
+
+.footer
+    > .copyright
+        padding 10px 0
+        font-size 1.8rem
+        text-align center
+        letter-spacing 1px
+
+
+.scroll-to-top
+    position fixed
+    bottom 20px
+    right 20px
+    width 70px
+    height 70px
+    border-radius 50%
+
+    color $inverse-color
+    background-color $color
+    box-shadow 3px 3px 20px #000000
+
+    text-align center
+    line-height 70px
+    font-size 3.5rem
+
+    cursor pointer
+    opacity 0
+    transition .5s
+    z-index 10
+
+    &.-show
+        opacity 1
+
+
+@import "./_mobile"

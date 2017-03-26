@@ -1,0 +1,66 @@
+@media (max-width 960px)
+    .container
+        width 100%
+
+    #about
+        height auto
+        .avatar-item
+            > .image
+                float none
+            > .info
+                float none
+                text-align center
+
+        .event-list
+            > .event-item
+                height auto
+
+                &.-left,
+                &.-right
+                    margin 40px auto
+                    border none
+                    padding 0
+
+                    &::before
+                        content ''
+
+                > .date,
+                > .description
+                    text-align center
+                    opacity 1
+
+        .flower-pot
+            display none
+
+    #works
+        .works-list
+            width 80%
+            flex-wrap wrap
+            justify-content center
+            margin 70px auto 0
+
+            > .card
+                margin 30px
+
+    #social
+        .icons
+            width 80%
+            flex-wrap wrap
+            justify-content center
+            margin 70px auto 0
+
+            > .circle
+                margin 20px
+
+    #contact
+        .contact-form
+            width 80%
+
+
+@media (max-width 480px)
+    html
+        font-size 50%
+
+    .main
+        .page-navigator
+            display none

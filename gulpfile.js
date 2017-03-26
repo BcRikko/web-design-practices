@@ -18,7 +18,7 @@ gulp.task('sync', () => {
 });
 
 gulp.task('stylus', () => {
-    return gulp.src('src/**/*.styl',{
+    return gulp.src('src/**/style.styl',{
             base: 'src'
         }).pipe(plumber())
         .pipe(stylus())
