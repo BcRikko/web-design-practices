@@ -226,11 +226,25 @@ $inverse-color = #ffffff
 
 
     .flower-pot
-        position absolute
+        position fixed
         bottom 0
-        left calc(50% - 190px)
+        left calc(50% - 420px / 2)
 
-        >  .base
+        &.-begin-pos
+            position absolute
+            top 500px
+
+        &.-end-pos
+            position absolute
+            bottom 0
+
+        > .top
+            width 420px
+            height 60px
+
+            background-color #662A1F
+
+        > .base
             width 380px
             height 150px
             margin 0 auto
@@ -239,17 +253,6 @@ $inverse-color = #ffffff
             border-right 30px solid transparent
             position relative
 
-            &::before
-                content ''
-                display block
-                position absolute
-
-                width 420px
-                height 60px
-                bottom 150px
-                left -50px
-
-                background-color #662A1F
 
 #works
     height 560px
