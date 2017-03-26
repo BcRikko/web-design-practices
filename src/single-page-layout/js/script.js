@@ -25,3 +25,12 @@ window.onscroll = function () {
         }
     });
 };
+
+$('.page-navigator > .menu').children().each(function (i, a) {
+    $(a).click(function () {
+        var idSelector = '#' + $(a).attr('class');
+        $('body').animate({
+            scrollTop: $(idSelector).offset().top
+        }, 500);
+    });
+});
