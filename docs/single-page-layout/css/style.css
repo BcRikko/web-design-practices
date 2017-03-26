@@ -31,7 +31,7 @@ textarea {
   box-shadow: 0px 0px 10px #333;
 }
 .main {
-  height: 680px;
+  height: 100vh;
   position: relative;
   background: #333 url("../asset/header.jpg") no-repeat;
   background-size: cover;
@@ -95,7 +95,7 @@ textarea {
   border-bottom: 2px solid #fff;
 }
 .main .company-name {
-  padding-top: 220px;
+  padding-top: 40vh;
   margin: 0 auto;
   text-align: center;
   text-shadow: 2px 2px 10px #333;
