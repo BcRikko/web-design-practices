@@ -1,19 +1,23 @@
+var defaultOffset = $('.flower-pot').offset().top;
+
 $(window).scroll(function () {
     var scrollTop = $('body').scrollTop();
     var $pot = $('.flower-pot');
 
     // fixed flower-pot element
-    $pot.toggleClass('-begin-pos', scrollTop < 460);
-    $pot.toggleClass('-end-pos', 1055 < scrollTop);
+    var begin = defaultOffset - $(window).height() + 216;
+
+    $pot.toggleClass('-begin-pos', scrollTop < begin);
+    $pot.toggleClass('-end-pos', begin + 595 < scrollTop);
 
     // show leaves
     $('.event-item').each(function (i, a) {
-        var base = 500;
+        var base = begin + 50;
         var $date = $(a).find('.date');
         var $desc = $(a).find('.description');
 
-        $date.toggleClass('-show', i * 100 + 500 < scrollTop);
-        $desc.toggleClass('-show', i * 100 + 500 < scrollTop);
+        $date.toggleClass('-show', i * 100 + base < scrollTop);
+        $desc.toggleClass('-show', i * 100 + base < scrollTop);
     });
 
     // show scroll-top-top button
