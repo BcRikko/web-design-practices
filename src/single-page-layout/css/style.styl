@@ -1,7 +1,7 @@
 @charset "UTF-8"
 
 @import "../../static/reset.css"
-@import "./base"
+@import "./_base"
 
 $color = #333333
 $inverse-color = #ffffff
@@ -271,8 +271,6 @@ $inverse-color = #ffffff
 
 
 #works
-    height 560px
-
     .works-list
         margin-top 70px
         display flex
@@ -342,8 +340,6 @@ $inverse-color = #ffffff
 
 
 #social
-    height 460px
-
     & .icons
         list-style none
         display flex
@@ -416,11 +412,9 @@ $inverse-color = #ffffff
 
 
 #contact
-    height 660px
-
     .contact-form
         width 750px
-        margin 70px auto 30px
+        margin 70px auto 0
 
         > .field
             transition .5s
@@ -479,3 +473,6 @@ $inverse-color = #ffffff
 
     &.-show
         opacity 1
+
+
+@import "./_mobile"
