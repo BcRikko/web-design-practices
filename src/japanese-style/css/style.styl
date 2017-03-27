@@ -3,13 +3,58 @@
 @import "../../static/reset.css"
 @import "./_base"
 
+.background
+    position relative
+
+    &::before
+        content ''
+        display block
+        position fixed
+        top 0
+        bottom 0
+        left 0
+        right 0
+        background #ffffff url("../asset/background.png") no-repeat
+        background-size cover
+        z-index -2
+
+    &::after
+        content '\f101'
+        font-family FontAwesome
+        display block
+        position fixed
+        top calc(50% - 35px)
+        right 10px
+
+        width 70px
+        height 70px
+        border-radius 50%
+        box-shadow 0 0 10px #333333
+
+        font-size 4rem
+        text-align center
+        line-height 70px
+        color #666666
+
+        z-index 1
+
+
 .content-section
     width 100vw
     height 100vh
     writing-mode vertical-rl
-    background #000000 url("../asset/texture.jpg") no-repeat
-    background-size cover
     position relative
+
+    &::before
+        content ''
+        display block
+        position absolute
+        top 40px
+        bottom 40px
+        left 0
+        right 0
+        background-color rgba(255, 255, 255, .8)
+        z-index -1
 
 .container
     width calc(100vw - -280px)
@@ -41,8 +86,9 @@
 
 #main
     position relative
-    background url("../asset/background.png") no-repeat
-    background-size cover
+
+    &.content-section::before
+        display none
 
     > .title
         position absolute
