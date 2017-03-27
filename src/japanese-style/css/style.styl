@@ -7,10 +7,19 @@
     width 100vw
     height 100vh
     writing-mode vertical-rl
+    background #000000 url("../asset/texture.jpg") no-repeat
+    background-size cover
+    position relative
+
+.container
+    width calc(100vw - -280px)
+    height calc(100vh - 120px)
+    margin 60px 140px
 
 .header
     position relative
     writing-mode vertical-rl
+    z-index 1
 
     > .page-navigator
         position fixed
@@ -32,22 +41,61 @@
 
 #main
     position relative
+    background url("../asset/background.png") no-repeat
+    background-size cover
 
     > .title
         position absolute
-        bottom 100px
+        bottom 60px
         left 140px
 
-        font-size 10.0rem
-        letter-spacing 5px
+        font-size 7.8rem
+        letter-spacing 1px
         writing-mode initial
-        width 600px
+        width 300px
 
     > .lead
         position absolute
-        top 100px
+        top 60px
         right 140px
 
         font-size 11rem
         letter-spacing 12px
         line-height 14rem
+
+#about
+    > .container
+        > .avatar-item
+            > .avatar-image
+                float left
+                > img
+                    width 240px
+                    height 240px
+
+            > .avatar-info
+                margin-top 20px
+                float left
+                width 240px
+                padding 0 calc((240px - 4.8rem - 10rem) / 2)
+
+                > .position
+                    font-size 4.8rem
+                > .name
+                    font-size  10rem
+
+            &::after
+                content ''
+                display block
+                clear both
+
+        > .event-list
+            margin 0 60px
+
+            > .event-item
+                margin-right 40px
+
+                > .date
+                    font-size 2.4rem
+                > .event
+                    margin-right 10px
+                    font-size 4.4rem
