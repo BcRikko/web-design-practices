@@ -18,4 +18,8 @@ $(document).ready(function () {
             $('#paging').moveTo(i + 1);
         });
     });
+
+    $('#next').click(function () {
+        $('#paging').moveDown();
+    });
 });

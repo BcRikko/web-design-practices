@@ -18,10 +18,7 @@
         background-size cover
         z-index -2
 
-    &::after
-        content '\f101'
-        font-family FontAwesome
-        display block
+    > #next
         position fixed
         top calc(50% - 35px)
         right 10px
@@ -36,7 +33,15 @@
         line-height 70px
         color #666666
 
+        cursor pointer
         z-index 1
+
+        &::before
+            content '\f101'
+            font-family FontAwesome
+            display block
+        &:hover
+            opacity .7
 
 
 .content-section
