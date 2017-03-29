@@ -224,3 +224,46 @@
                             color rgba(51, 51, 51, 1)
                             text-shadow 0 0 5px #888888
 
+#contact
+    > .container
+        > .contact-form
+            > .field
+                font-size 3.6rem
+
+                > .label
+                    display block
+
+                > .inputarea
+                    writing-mode initial
+                    transform-origin top left
+                    transform rotate(90deg)
+
+                    padding 20px
+                    border-radius 5px
+
+                    width calc(100vh - 120px)
+                    margin-right calc((100vh - 120px - 20px)  * -1)
+
+                &.name
+                    width 160px
+
+                &.message
+                    width 840px
+
+            > .submit
+                writing-mode initial
+                transform-origin top left
+                transform rotate(90deg)
+
+                width 240px
+                padding 20px 10px
+                border-radius 5px
+                margin-right calc((240px - 20px) * -1)
+
+                background-color #DBD0B4
+                border none
+                box-shadow 2px 0 10px #666666
+
+                &:hover
+                    opacity .7
+
